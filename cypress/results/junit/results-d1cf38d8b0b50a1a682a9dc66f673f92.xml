@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="9.8600" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-06-24T21:55:47" tests="1" file="cypress/integration/firstTest.spec.js" time="9.8570" failures="1">
+    <testcase name="second test" time="0.0000" classname="second test">
+      <failure message="Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+`&lt;a class=&quot;ng-tns-c7-5 ng-star-inserted active&quot; ng-reflect-router-link=&quot;/pages/forms/layouts&quot; title=&quot;Form Layouts&quot; href=&quot;/pages/forms/layouts&quot;&gt;...&lt;/a&gt;`
+
+is being covered by another element:
+
+`&lt;span class=&quot;menu-title&quot;&gt;Modal &amp;...&lt;/span&gt;`
+
+Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:
+
+`<a class="ng-tns-c7-5 ng-star-inserted active" ng-reflect-router-link="/pages/forms/layouts" title="Form Layouts" href="/pages/forms/layouts">...</a>`
+
+is being covered by another element:
+
+`<span class="menu-title">Modal &...</span>`
+
+Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+    at $Cy.ensureDescendents (http://localhost:4200/__cypress/runner/cypress_runner.js:168905:78)
+    at ensureDescendents (http://localhost:4200/__cypress/runner/cypress_runner.js:154402:8)
+    at ensureDescendentsAndScroll (http://localhost:4200/__cypress/runner/cypress_runner.js:154409:14)
+    at ensureElIsNotCovered (http://localhost:4200/__cypress/runner/cypress_runner.js:154541:5)
+    at runAllChecks (http://localhost:4200/__cypress/runner/cypress_runner.js:154731:52)
+    at retryActionability (http://localhost:4200/__cypress/runner/cypress_runner.js:154755:16)
+    at tryCatcher (http://localhost:4200/__cypress/runner/cypress_runner.js:13022:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:4200/__cypress/runner/cypress_runner.js:10296:29)
+    at whenStable (http://localhost:4200/__cypress/runner/cypress_runner.js:173835:65)
+    at http://localhost:4200/__cypress/runner/cypress_runner.js:173290:14
+    at tryCatcher (http://localhost:4200/__cypress/runner/cypress_runner.js:13022:23)
+    at Promise._settlePromiseFromHandler (http://localhost:4200/__cypress/runner/cypress_runner.js:10957:31)
+    at Promise._settlePromise (http://localhost:4200/__cypress/runner/cypress_runner.js:11014:18)
+    at Promise._settlePromise0 (http://localhost:4200/__cypress/runner/cypress_runner.js:11059:10)
+    at Promise._settlePromises (http://localhost:4200/__cypress/runner/cypress_runner.js:11139:18)
+    at Promise._fulfill (http://localhost:4200/__cypress/runner/cypress_runner.js:11083:18)
+From Your Spec Code:
+    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress/integration/firstTest.spec.js:141:31)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

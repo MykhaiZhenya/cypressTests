@@ -1,6 +1,7 @@
 {
-    "baseUrl": "https://serviceportal.hamburg.de/HamburgGateway/FVP/FV/Bezirke/DigiTermin/",
-    "ignoreTestFiles": "**/examples/*",
+    "baseUrl": "http://localhost:4200/pages/forms/layouts/",
+
+  "ignoreTestFiles": "**/examples/*",
     "viewportHeight": 1080,
     "viewportWidth": 1920,
     "reporter": "cypress-multi-reporters",

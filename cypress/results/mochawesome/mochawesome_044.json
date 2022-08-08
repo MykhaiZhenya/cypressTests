@@ -1,0 +1,91 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-24T22:13:03.229Z",
+    "end": "2022-06-24T22:13:13.655Z",
+    "duration": 10426,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "100f73f9-70e0-47d0-8966-b46285f18d48",
+      "title": "",
+      "fullFile": "cypress/integration/firstTest.spec.js",
+      "file": "cypress/integration/firstTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "second test",
+          "fullTitle": "second test",
+          "timedOut": null,
+          "duration": 10197,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('/');\ncy.contains('Forms').click();\ncy.contains('Form Layouts').click();\ncy.get('[data-cy=\"signInbutton\"]');\ncy.contains('Sign in');",
+          "err": {
+            "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<a class=\"ng-tns-c7-5 ng-star-inserted active\" ng-reflect-router-link=\"/pages/forms/layouts\" title=\"Form Layouts\" href=\"/pages/forms/layouts\">...</a>`\n\nis being covered by another element:\n\n`<span class=\"menu-title\">Modal &...</span>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+            "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<a class=\"ng-tns-c7-5 ng-star-inserted active\" ng-reflect-router-link=\"/pages/forms/layouts\" title=\"Form Layouts\" href=\"/pages/forms/layouts\">...</a>`\n\nis being covered by another element:\n\n`<span class=\"menu-title\">Modal &...</span>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (http://localhost:4200/__cypress/runner/cypress_runner.js:168905:78)\n    at ensureDescendents (http://localhost:4200/__cypress/runner/cypress_runner.js:154402:8)\n    at ensureDescendentsAndScroll (http://localhost:4200/__cypress/runner/cypress_runner.js:154409:14)\n    at ensureElIsNotCovered (http://localhost:4200/__cypress/runner/cypress_runner.js:154541:5)\n    at runAllChecks (http://localhost:4200/__cypress/runner/cypress_runner.js:154731:52)\n    at retryActionability (http://localhost:4200/__cypress/runner/cypress_runner.js:154755:16)\n    at tryCatcher (http://localhost:4200/__cypress/runner/cypress_runner.js:13022:23)\n    at Function.Promise.attempt.Promise.try (http://localhost:4200/__cypress/runner/cypress_runner.js:10296:29)\n    at whenStable (http://localhost:4200/__cypress/runner/cypress_runner.js:173835:65)\n    at http://localhost:4200/__cypress/runner/cypress_runner.js:173290:14\n    at tryCatcher (http://localhost:4200/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:4200/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:4200/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:4200/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:4200/__cypress/runner/cypress_runner.js:11139:18)\n    at Promise._fulfill (http://localhost:4200/__cypress/runner/cypress_runner.js:11083:18)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress/integration/firstTest.spec.js:141:31)",
+            "diff": null
+          },
+          "uuid": "67bef2c6-46e4-42a6-bb0f-670da43caede",
+          "parentUUID": "100f73f9-70e0-47d0-8966-b46285f18d48",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "67bef2c6-46e4-42a6-bb0f-670da43caede"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 10197,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
