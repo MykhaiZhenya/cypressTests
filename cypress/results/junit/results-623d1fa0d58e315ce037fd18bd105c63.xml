@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="37.5270" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-08-08T21:01:45" tests="1" file="cypress/integration/firstTest.spec.js" time="37.5160" failures="1">
+    <testcase name="then and wrap methods" time="0.0000" classname="then and wrap methods">
+      <failure message="Timed out retrying after 4000ms: expected &apos;&lt;input#exampleInputEmail1.input-full-width.size-medium.shape-rectangle&gt;&apos; to contain &apos;Email&apos;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected '<input#exampleInputEmail1.input-full-width.size-medium.shape-rectangle>' to contain 'Email'
+    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress/integration/firstTest.spec.js:158:74)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

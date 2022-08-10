@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.8270" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-08-08T21:11:22" tests="1" file="cypress/integration/firstTest.spec.js" time="4.8260" failures="0">
+    <testcase name="then and wrap methods" time="4.7750" classname="then and wrap methods">
+    </testcase>
+  </testsuite>
+</testsuites>

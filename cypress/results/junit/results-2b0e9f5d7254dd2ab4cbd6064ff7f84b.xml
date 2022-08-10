@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="9.4810" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-08-08T21:34:03" tests="1" file="cypress/integration/firstTest.spec.js" time="9.3870" failures="1">
+    <testcase name="then and wrap methods" time="0.0000" classname="then and wrap methods">
+      <failure message="expected &apos;&apos; to equal &apos;Email&apos;" type="AssertionError"><![CDATA[AssertionError: expected '' to equal 'Email'
+    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress/integration/firstTest.spec.js:163:32)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
