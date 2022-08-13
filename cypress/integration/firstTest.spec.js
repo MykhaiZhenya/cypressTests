@@ -123,11 +123,17 @@ it('invoke command', () => {
     cy.contains('Form Layouts').click({force: true})
 
     // 1st approach
-    cy.get('[for="exampleInputEmail1"]').should('contain','Email address')
+    cy.get('[for="exampleInputEmail1"]')
+    .should('contain','Email address')
+    .should('have.class', 'label')
+    .and('have.text', 'Email address')
+
 
     // 2nd approach
     cy.get('[for="exampleInputEmail1"]').then( label => {
         expect(label.text()).to.equal('Email address')
+        expect(label).to.have.class('label')
+        expect(label).to.have.text('Email address')
 
     // 3rd approach
     cy.get('[for="exampleInputEmail1"]').invoke('text').then( text => {
@@ -150,20 +156,35 @@ it('invoke command', () => {
 
 })
 
-it('assert property', () => {
+it.only('assert property', () => {
     cy.visit('/')
     cy.contains('Forms').click()
     cy.contains('Datepicker').click({force: true})
 
+    function selectDayFromCurrent(){
+        let date = new Date()
+        date.setDate(date.getDate() + 51)
+        let futureDay = date.getDate()
+        let futureMonth = date.toLocaleString('default', {month: 'short'})
+        let dateAssert = futureMonth+' '+futureDay+', '+date.getFullYear()
+        cy.get('nb-calendar-navigation').invoke('attr', 'ng-reflect-date').then( dateAttribute => {
+            if(!dateAttribute.includes(futureMonth)){
+                cy.get('[data-name="chevron-right"]').click()
+                selectDayFromCurrent()
+                } else {
+                cy.get('nb-calendar-day-picker [class="day-cell ng-star-inserted"').contains(futureDay).click()
+            }
+        })
+        return dateAssert
+    }
+    
     cy.contains('nb-card', 'Common Datepicker').find('input').then( input => {
         cy.wrap(input).click()
-        cy.get('nb-calendar-day-picker').contains('17').click()
-        cy.wrap(input).invoke('prop', 'value').should('contain', 'Aug 17, 2022')    
-        
+        let dateAssert = selectDayFromCurrent()
+        cy.wrap(input).invoke('prop', 'value').should('contain', dateAssert)
+        cy.wrap(input).should('have.value', dateAssert)        
     })
-
-
-} )
+})
 
 it('radio button', () => {
     cy.visit('/')
@@ -239,7 +260,7 @@ it('lists and dropdowns', () => {
 
 })
 
-it.only('Web tables', () => {
+it('Web tables', () => {
     cy.visit('/')
     cy.contains('Tables & Data').click()
     cy.contains('Smart Table').click({force: true})
@@ -283,3 +304,29 @@ it.only('Web tables', () => {
 
     
 
+it('tooltip', () => {
+    cy.visit('/')
+    cy.contains('Modal & Overlays').click()
+    cy.contains('Tooltip').click({force: true}) 
+
+    cy.contains('nb-card', 'Colored Tooltips')
+        .contains('Default').click()
+    cy.get('nb-tooltip').should('contain', 'This is a tooltip')
+})
+
+it('tooltip', () => {
+    cy.visit('/')
+    cy.contains('Modal & Overlays').click()
+    cy.contains('Smart Table').click({force: true}) 
+
+    // const stub = cy.stub()
+    // cy.on('window:confirm', stub)
+    // cy.get('tbody tr').first().find('.nb-trash').click().then(() => {
+    //     expect(stub.getCall(0)).to.be.calledWith('Are you sure you want to delete?')
+    // })
+
+    //Cancel Delete
+    cy.get('tbody tr').first().find('.nb-trash').click()
+    cy.on('window:confirm', () => false)
+
+    })
