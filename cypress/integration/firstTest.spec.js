@@ -156,7 +156,7 @@ it('invoke command', () => {
 
 })
 
-it.only('assert property', () => {
+it('assert property', () => {
     cy.visit('/')
     cy.contains('Forms').click()
     cy.contains('Datepicker').click({force: true})
